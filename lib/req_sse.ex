@@ -67,6 +67,7 @@ defmodule ReqSSE do
     |> Req.Request.append_response_steps(parse_sse: &parse_sse/1)
   end
 
+  @doc false
   def ensure_into_self(request) do
     case request.into do
       :self -> request
@@ -74,6 +75,7 @@ defmodule ReqSSE do
     end
   end
 
+  @doc false
   def parse_sse({request, response}) when response.status in 200..299 do
     case Req.Response.get_header(response, "content-type") do
       ["text/event-stream" <> _] ->
