@@ -10,6 +10,10 @@ defmodule ReqSSE.MixProject do
     ]
   end
 
+  def cli do
+    [preferred_envs: [docs: :docs, "hex.publish": :docs]]
+  end
+
   defp deps do
     [
       {:bandit, "~> 1.8", only: :test},
@@ -38,10 +42,6 @@ defmodule ReqSSE.MixProject do
         links: %{
           "GitHub" => @source_url
         }
-      ],
-      preferred_cli_env: [
-        docs: :docs,
-        "hex.publish": :docs
       ],
       source_url: @source_url,
       start_permanent: Mix.env() == :prod,
