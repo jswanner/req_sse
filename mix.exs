@@ -2,7 +2,7 @@ defmodule ReqSSE.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/jswanner/req_sse"
-  @version "0.1.0"
+  @version "0.1.1"
 
   def application do
     [
@@ -19,7 +19,7 @@ defmodule ReqSSE.MixProject do
       {:bandit, "~> 1.8", only: :test},
       {:ex_doc, ">= 0.0.0", only: :docs, runtime: false, warn_if_outdated: true},
       {:plug, "~> 1.18", only: :test},
-      {:req, "~> 0.5.0"},
+      {:req, "~> 0.5.0 or ~> 0.6.0"},
       {:req_test_bandit, "~> 0.1.0", only: :test}
     ]
   end
